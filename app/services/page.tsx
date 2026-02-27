@@ -26,7 +26,7 @@ export default function Services() {
     <div className="w-full min-h-screen bg-white dark:bg-neutral-950 selection:bg-blue-600 selection:text-white flex flex-col">
       
       <section className="relative w-full bg-blue-600 pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden shrink-0">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('https://plus.unsplash.com/premium_photo-1663090226912-511b20a3f8a3?q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-blue-700/50 to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
