@@ -1,0 +1,194 @@
+"use client"
+
+import { motion, Variants } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
+import { Users, HardHat } from "lucide-react"
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+}
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+}
+
+const promoters = [
+  { 
+    name: "Mr. Rajashekhar Sangram Singh Rana", 
+    role: "Promoter", 
+    qualification: "B.Tech – Mech.", 
+    experience: "09 Years Experience In Structural Fabrication & Erection.",
+    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800"
+  },
+  { 
+    name: "Mr. Jasvinder Pal Singh", 
+    role: "Promoter", 
+    qualification: "Industry Veteran", 
+    experience: "36 Years Experience In Power Sector BHEL/NTPC.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800"
+  }
+]
+
+const engineers = [
+  { name: "Mr. Surendra Kumar Panda", role: "Site Engineer", qualification: "D.M.E.", experience: "38 Years, 15 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1506803682981-6e718a9dd3ee?q=80&w=500" },
+  { name: "Mr. Kishor Kumar Singh", role: "Site Engineer", qualification: "B.E.", experience: "28 Years, 5 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=500" },
+  { name: "Mr. Abhishek Shrivastav", role: "Site Engineer", qualification: "B.Tech", experience: "28 Years, 5 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500" },
+  { name: "Mr. Dinesh Singh", role: "Site Engineer", qualification: "D.M.E.", experience: "28 Years, 5 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=500" },
+  { name: "Mr. Indra Mani Sahu", role: "Site Engineer", qualification: "Senior Engineer", experience: "45 Years, 23 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=500" },
+  { name: "Mr. R.K. Singh", role: "Site Engineer", qualification: "Senior Engineer", experience: "35 Years, 17 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=500" },
+  { name: "Mr. Bhanu Pratap Singh", role: "Site Engineer", qualification: "D.M.E.", experience: "24 Years, 4 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=500" },
+  { name: "Mr. Amit Das", role: "Site Engineer", qualification: "Technical Lead", experience: "35 Years, 7 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?q=80&w=500" },
+  { name: "Mr. Komal Singh", role: "Site Engineer", qualification: "D.M.E.", experience: "27 Years, 5 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500" },
+  { name: "Mr. Ranjan Kumar", role: "Site Engineer", qualification: "D.M.E.", experience: "30 Years, 8 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=500" },
+  { name: "Mr. Ravi Kumar", role: "Site Engineer", qualification: "B.Tech", experience: "26 Years, 3 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=500" },
+  { name: "Mr. Dinesh Sharma", role: "Site Engineer", qualification: "D.M.E.", experience: "27 Years, 4 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=500" },
+  { name: "Mr. Yusuf Khan", role: "Safety Officer", qualification: "Certified Safety Professional", experience: "25 Years, 4 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?q=80&w=500" },
+  { name: "Mr. Simran Sinha", role: "Safety Officer", qualification: "Safety Coordinator", experience: "24 Years, 2 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1619950498711-c2d22c4c3cb7?q=80&w=2808&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=500" },
+  { name: "Mr. Anjani Maurya", role: "Site Engineer", qualification: "Field Engineer", experience: "27 Years, 2 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=500" },
+  { name: "Mr. Susant Hati", role: "Site Engineer", qualification: "D.M.E.", experience: "28 Years, 5 Years Exp. In Structural Fabrication", image: "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?q=80&w=500" }
+]
+
+export default function Team() {
+  return (
+    <div className="w-full min-h-screen bg-white dark:bg-neutral-950 selection:bg-blue-600 selection:text-white flex flex-col">
+      
+      <section className="relative w-full bg-blue-600 pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden shrink-0">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-700/50 to-transparent"></div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="flex flex-col items-center"
+          >
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/50 text-yellow-300 font-bold text-sm mb-6 backdrop-blur-md border border-blue-400/50">
+              <Users size={18} />
+              <span>Professional Workforce</span>
+            </motion.div>
+            
+            <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 tracking-tight uppercase leading-tight">
+              Our <span className="text-yellow-400">Team</span>
+            </motion.h1>
+            
+            <motion.p variants={fadeUp} className="text-blue-100 font-medium max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+              The industry's best lineup of professional team players dedicated to safety, precision, and unyielding quality.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 max-w-7xl mx-auto px-4 w-full flex-grow">
+        <div className="mb-24">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-neutral-900 dark:text-white uppercase tracking-tight">
+              Leadership & <span className="text-blue-600 dark:text-blue-500">Promoters</span>
+            </h2>
+            <div className="w-24 h-1.5 bg-yellow-400 mx-auto mt-6 rounded-full"></div>
+          </div>
+          
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto"
+          >
+            {promoters.map((person, index) => (
+              <motion.div 
+                key={index}
+                variants={fadeUp}
+                className="group bg-white dark:bg-neutral-900 rounded-[2.5rem] p-8 text-center shadow-xl border border-neutral-100 dark:border-neutral-800 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              >
+                <div className="relative w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden border-4 border-blue-100 dark:border-neutral-800 group-hover:border-blue-500 transition-colors duration-500">
+                  <Image 
+                    src={person.image} 
+                    alt={person.name} 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
+                <h3 className="text-2xl font-black text-neutral-900 dark:text-white mb-2">{person.name}</h3>
+                <p className="text-blue-600 dark:text-blue-500 font-bold mb-2 uppercase tracking-wider text-sm">{person.role}</p>
+                {person.qualification && <p className="font-semibold text-neutral-500 dark:text-neutral-400 mb-4">{person.qualification}</p>}
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed font-medium bg-neutral-50 dark:bg-neutral-950 p-4 rounded-2xl">
+                  {person.experience}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        <div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-neutral-900 dark:text-white uppercase tracking-tight">
+              Site Engineers & <span className="text-blue-600 dark:text-blue-500">Safety Officers</span>
+            </h2>
+            <div className="w-24 h-1.5 bg-yellow-400 mx-auto mt-6 rounded-full"></div>
+          </div>
+
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
+          >
+            {engineers.map((person, index) => (
+              <motion.div 
+                key={index}
+                variants={fadeUp}
+                className="group bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-3xl p-6 flex flex-col items-center text-center hover:shadow-xl transition-all duration-300 hover:border-blue-500/50"
+              >
+                <div className="relative w-24 h-24 mb-6 rounded-2xl overflow-hidden shadow-md group-hover:shadow-blue-500/20 transition-all duration-300 group-hover:-translate-y-1">
+                  <Image 
+                    src={person.image} 
+                    alt={person.name} 
+                    fill 
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <h3 className="text-lg font-bold text-neutral-900 dark:text-white mb-1 line-clamp-1">{person.name}</h3>
+                <p className="text-xs font-black text-blue-600 dark:text-blue-500 uppercase tracking-wider mb-2">{person.role}</p>
+                {person.qualification && <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 mb-4">{person.qualification}</p>}
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-auto bg-neutral-50 dark:bg-neutral-950/50 w-full p-3 rounded-xl font-medium">
+                  {person.experience}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="w-full bg-[#FFD700] py-20 md:py-24 relative overflow-hidden mt-auto shrink-0">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        
+        <div className="max-w-4xl mx-auto px-4 relative z-10 flex flex-col items-center text-center">
+          <div className="mb-6 bg-white/20 p-4 rounded-full backdrop-blur-sm">
+            <HardHat size={48} className="text-neutral-900" strokeWidth={2.5} />
+          </div>
+          
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-neutral-900 mb-6 tracking-tight">
+            Want to join our workforce?
+          </h2>
+          
+          <p className="text-lg md:text-xl text-neutral-800 mb-10 max-w-2xl font-bold leading-relaxed">
+            We are always looking for certified professionals to join our growing team of industry experts.
+          </p>
+          
+          <Link 
+            href="/contact" 
+            className="inline-flex items-center justify-center px-8 py-4 bg-[#1A61FF] text-white hover:bg-neutral-900 rounded-full font-black text-lg md:text-xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
+          >
+            Apply Now
+          </Link>
+        </div>
+      </section>
+
+    </div>
+  )
+}
