@@ -16,7 +16,7 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Corporate Office</h3>
-              [cite_start]<p className="text-neutral-600 dark:text-neutral-400">Near Lanco Power Project Gate No-3, Dibulganj, Anpara<br/>Sonbhadra, Uttar Pradesh – 231225 [cite: 75, 76, 77]</p>
+              <p className="text-neutral-600 dark:text-neutral-400">Near Lanco Power Project Gate No-3, Dibulganj, Anpara<br/>Sonbhadra, Uttar Pradesh – 231225 </p>
             </div>
           </div>
           <div className="flex gap-4">
@@ -25,7 +25,7 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Phone Numbers</h3>
-              [cite_start]<p className="text-neutral-600 dark:text-neutral-400">+91 95990 39554<br/>+91 90262 81554 [cite: 78]</p>
+              <p className="text-neutral-600 dark:text-neutral-400">+91 95990 39554<br/>+91 90262 81554 </p>
             </div>
           </div>
           <div className="flex gap-4">
@@ -34,7 +34,7 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Email Address</h3>
-              [cite_start]<p className="text-neutral-600 dark:text-neutral-400">massivepower.info@gmail.com [cite: 78]</p>
+              <p className="text-neutral-600 dark:text-neutral-400">massivepower.info@gmail.com </p>
             </div>
           </div>
         </div>
