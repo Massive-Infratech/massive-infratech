@@ -76,7 +76,11 @@ export default function Home() {
 
       {/* 2. OUR PROMISE */}
       {/* Changed negative margins to positive margins to pre-render before scrolling into view */}
-      <section className="py-24 bg-blue-600/95 dark:bg-blue-900/95 backdrop-blur-xl text-white relative z-20 shadow-2xl border-y border-blue-400/30 dark:border-blue-700/50">
+      <section className="py-32 bg-blue-600 text-white relative z-20 overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.15)]">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1672380135241-c024f7fbfa13?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
+        
+        
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -295,7 +299,7 @@ export default function Home() {
 
       {/* 8. CTA SECTION */}
       <section className="py-32 bg-blue-600 text-white relative z-20 overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.15)]">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=2000')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
         
         <motion.div 
@@ -306,7 +310,7 @@ export default function Home() {
           className="max-w-5xl mx-auto px-4 relative z-10 text-center will-change-transform"
         >
           <motion.div variants={fadeUp}>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter uppercase">Build The Future.</h2>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter uppercase">Build The Futuregg.</h2>
             <p className="text-xl md:text-3xl text-blue-100 mb-12 font-medium max-w-4xl mx-auto leading-relaxed drop-shadow-md">
               Partner with Massive Infratech for unparalleled safety, precision, and delivery on your next major infrastructure project.
             </p>
