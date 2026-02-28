@@ -134,7 +134,7 @@ function InteractiveComplexGeometry() {
   })
 
   const isDark = resolvedTheme === 'dark'
-  const primaryColor = isDark ? '#3b82f6' : '#94a3b8'   
+  const primaryColor = isDark ? '#0e2b5a' : '#94a3b8'   
   const secondaryColor = isDark ? '#1e3a8a' : '#e2e8f0' 
 
   return (
