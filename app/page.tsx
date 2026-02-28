@@ -310,7 +310,7 @@ export default function Home() {
           className="max-w-5xl mx-auto px-4 relative z-10 text-center will-change-transform"
         >
           <motion.div variants={fadeUp}>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter uppercase">Build The Futuregg.</h2>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter uppercase">Build The Future.</h2>
             <p className="text-xl md:text-3xl text-blue-100 mb-12 font-medium max-w-4xl mx-auto leading-relaxed drop-shadow-md">
               Partner with Massive Infratech for unparalleled safety, precision, and delivery on your next major infrastructure project.
             </p>
