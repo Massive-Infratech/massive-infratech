@@ -9,16 +9,29 @@ import { motion, AnimatePresence } from "framer-motion"
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { 
-    label: "Expertise", 
+  {
+    label: "Businesses",
+    children: [
+      { href: "/businesses/industrial-construction", label: "Industrial Construction" },
+      { href: "/businesses/industrial-services", label: "Industrial Services" },
+      { href: "/businesses/civil-engineering", label: "Civil Engineering" },
+      { href: "/businesses/electrical", label: "Electrical" },
+      { href: "/businesses/overseas-business", label: "Overseas Business" },
+      { href: "/businesses/spare-parts-management", label: "Spare Parts Management & Workshop" },
+      { href: "/businesses/water", label: "Water" },
+      { href: "/businesses/mining", label: "Mining" }
+    ]
+  },
+  {
+    label: "Expertise",
     children: [
       { href: "/services", label: "Our Services" },
       { href: "/tools", label: "Tools & Machinery" },
       { href: "/manpower", label: "Certified Manpower" }
     ]
   },
-  { 
-    label: "Company", 
+  {
+    label: "Company",
     children: [
       { href: "/team", label: "Our Team" },
       { href: "/compliance", label: "Compliance & Legal" }
@@ -43,7 +56,7 @@ export default function Navbar() {
             MASSIVE<span className="text-neutral-900 text-yellow-400">INFRATECH</span>
           </span>
         </Link>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse items-center gap-4">
+        <div className="flex lg:order-2 space-x-3 lg:space-x-0 rtl:space-x-reverse items-center gap-4">
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -54,26 +67,26 @@ export default function Navbar() {
           )}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-500 rounded-lg md:hidden hover:bg-neutral-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-800 transition-colors"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-500 rounded-lg lg:hidden hover:bg-neutral-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-800 transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-        <div className="hidden w-full md:block md:w-auto md:order-1">
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+        <div className="hidden w-full lg:block lg:w-auto lg:order-1">
+          <ul className="flex flex-col font-medium p-4 lg:p-0 mt-4 lg:space-x-4 xl:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0">
             {navItems.map((item) => (
               <li key={item.label} className="relative group">
                 {item.children ? (
-                  <div className="flex items-center gap-1 py-2 px-3 text-neutral-900 rounded cursor-pointer hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition-colors">
+                  <div className="flex items-center gap-1 py-2 px-2 xl:px-3 text-neutral-900 rounded cursor-pointer hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition-colors">
                     {item.label}
                     <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-200" />
-                    <div className="absolute top-full left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left shadow-xl bg-white dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 rounded-xl overflow-hidden">
+                    <div className="absolute top-full left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left shadow-xl bg-white dark:bg-neutral-900 border border-neutral-100 dark:border-neutral-800 rounded-xl overflow-hidden">
                       <div className="py-2 flex flex-col">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className="px-4 py-2.5 text-sm text-neutral-700 hover:bg-blue-50 hover:text-blue-600 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white transition-colors"
+                            className="px-4 py-2.5 text-sm font-medium text-neutral-700 hover:bg-blue-50 hover:text-blue-600 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white transition-colors"
                           >
                             {child.label}
                           </Link>
@@ -84,7 +97,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block py-2 px-3 text-neutral-900 rounded hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition-colors"
+                    className="block py-2 px-2 xl:px-3 text-neutral-900 rounded hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -100,14 +113,14 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800"
+            className="lg:hidden bg-white dark:bg-neutral-950 border-b border-neutral-200 dark:border-neutral-800"
           >
             <ul className="flex flex-col font-medium p-4 space-y-2">
               {navItems.map((item) => (
                 <li key={item.label}>
                   {item.children ? (
                     <div>
-                      <button 
+                      <button
                         onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
                         className="flex items-center justify-between w-full py-2 px-3 text-neutral-900 rounded hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-800 transition-colors"
                       >
